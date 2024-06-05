@@ -6,9 +6,8 @@ This project is a collection of web infrastructure designs that could be impleme
 
 ## Whiteboarding each task
 
-+ Simple web stack - [details](0-simple_web_stack.md)
-+ Distributed web infrastructure - [details](1-distributed_web_infrastructure.md)
-+ Secured and monitored web infrastrucure - [details](2-secured_and_monitored_web_infrastructure.md)
-+ Scaled up web infrastructure - [details](3-scale_up.md)
++ Simple web stack
++ Distributed web infrastructure
++ Secured and monitored web infrastrucure
++ Scaled up web infrastructure
 # Web Infrastructure Design
-![](https://onesystemstech.com/wp-content/uploads/2022/03/One-Systems-Technologies-Wireless-Network-Infrastructure-illustration.jpg)
