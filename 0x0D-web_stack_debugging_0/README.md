@@ -9,3 +9,5 @@ In this debugging series, broken/bugged webstacks will be given to you, the fina
 ## task
 + 0-give_me_a_page
 	+ fixing broken server.
+
+![image](https://github.com/kazeneza-zephilin/alx-system_engineering-devops/assets/134048075/46d09e77-cb70-4487-b378-5fde3a4ee763)
