@@ -1,17 +1,32 @@
 #!/usr/bin/python3
-"""Module for task 0"""
+"""
+Returns the number of subscribers from a subreddit
+"""
+import requests
 
 
 def number_of_subscribers(subreddit):
-    """Queries the Reddit API and returns the number of subscribers
-    to the subreddit"""
-    import requests
+    """ Set a custom header user-agent """
+    headers = {"User-Agent": "ALU-scripting API 0.1"}
+    url = "https://www.reddit.com/r/{}.json".format(subreddit)
 
-    sub_info = requests.get("https://www.reddit.com/r/{}/about.json"
-                            .format(subreddit),
-                            headers={"User-Agent": "My-User-Agent"},
-                            allow_redirects=False)
-    if sub_info.status_code >= 300:
+    try:
+        response = requests.get(url, headers=headers,
+                                timeout=30, allow_redirects=False)
+
+    except requests.exceptions.Timeout:
+        return "The request Timed out"
+
+    if response.status_code == 200:
+        json_data = response.json()
+        subscriber_number = (
+            json_data.get("data")
+            .get("children")[0]
+            .get("data")
+            .get("subreddit_subscribers")
+        )
+        return subscriber_number
+    elif response.status_code == 404:
         return 0
-
-    return sub_info.json().get("data").get("subscribers")
+    else:
+        return 0
